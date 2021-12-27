@@ -14,7 +14,6 @@ set clipboard+=unnamedplus
 set nobackup
 set incsearch
 set cursorline
-set cursorcolumn
 set termguicolors
 
 "set spell
