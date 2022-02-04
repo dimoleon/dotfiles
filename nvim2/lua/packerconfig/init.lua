@@ -14,11 +14,16 @@ return require'packer'.startup(function()
     use 'saadparwaiz1/cmp_luasnip'  --snippets source for nvim-cmp
     use 'L3MON4D3/LuaSnip'          --snippets plugin
 
-    use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
-    use 'nvim-treesitter/nvim-treesitter-refactor'
+    use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}      --treesitter 
+    use 'nvim-treesitter/nvim-treesitter-refactor'                  --bulk rename functions/variables
+    use 'lukas-reineke/indent-blankline.nvim'                       --indenting highlighting
 
     use {
-        'nvim-telescope/telescope.nvim',
+        'nvim-telescope/telescope.nvim',                            --telescope 
         requires = { {'nvim-lua/plenary.nvim'} }
     }
+    use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' } --telescope fzf source
+
 end)
+
+
