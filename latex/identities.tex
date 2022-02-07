@@ -1,0 +1,118 @@
+\documentclass{article}
+\input{/home/giannis/Documents/latex/preamble.tex}
+
+\setmainfont{GFS Didot}
+\title{Χρήσιμες Ταυτότητες}
+\author{tromboni.gd}
+\date{}
+\DeclareMathOperator{\arcsec}{arcsec}
+\DeclareMathOperator{\arccot}{arccot}
+\DeclareMathOperator{\arccsc}{arccsc}
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+\section{Γενικές}
+\[
+e^{x}=\sum_{n=0}^{\infty}\frac{x^{n}}{n!}
+\] 
+\[
+    \cos x = \sum_{n=0}^{\infty}(-1)^{n}\frac{x^{2n}}{(2n)!}
+\]
+\[
+    \sin x = \sum_{n=0}^{\infty}(-1)^{n}\frac{x^{2n+1}}{(2n+1)!}
+\] 
+\[
+    e^{ix}=\cos x + \mathrm{i} \sin x 
+\] 
+\[
+\cos x = \frac{e^{\mathrm{i}x}+e^{-\mathrm{i}x}}{2} \quad 
+\sin x = \frac{e^{\mathrm{i}x}-e^{-\mathrm{i}x}}{2\mathrm{i}}
+\] 
+\[
+    (\cos x + \text{i} \sin x)^{n}=e^{\text{i}nx} = \cos (nx) + \text{i} \sin (nx)
+\] 
+\[
+a^3+b^3+c^3 - 3abc = a^2+b^2+c^2-ab-bc-ca = \frac{1}{2}\left((a-b)^2+(b-c)^2+(c-a)^2\right)
+\] 
+\[
+    (a^2+b^2)(c^2+d^2) = (ac+bd)^2 + (ad-bc)^2
+\] 
+\section{Τριγωνομετρικές}
+\[
+    1 = \cos^2x + \sin^2x
+\] 
+\[
+\tan x = \frac{\sin x}{\cos x} \quad \cot x = \frac{\cos x}{\sin x}
+\] 
+\[
+\sec x = \frac{1}{\cos x} \quad \csc x = \frac{1}{\sin x}
+\] 
+\begin{gather}
+    \cos (x+y) = \cos x\cos y - \sin x \sin y \notag\\
+    \cos (x-y) = \cos x\cos y + \sin x \sin y \notag\\
+    \sin (x+y) = \sin x\cos y + \cos x \sin y \notag\\
+    \sin (x-y) = \sin x\cos y - \cos x \sin y \notag
+\end{gather}
+\begin{gather}
+    2\cos x \cos y = \cos (x+y) + \cos (x-y) \notag\\
+    2\sin x \cos y = \sin (x+y) - \sin (x-y) \notag\\
+    2\sin x \sin y = \cos (x+y) - \cos (x-y) \notag 
+\end{gather}
+\begin{gather*}
+    \cos x + \cos y = 2\cos \left(\frac{x+y}{2}\right)\cos \left(\frac{x-y}{2}\right) \\
+    \cos x - \cos y = -2\sin\left(\frac{x+y}{2}\right)\sin \left(\frac{x-y}{2}\right) \\
+    \sin x + \sin y = 2\sin \left(\frac{x+y}{2}\right)\cos \left(\frac{x-y}{2}\right) \\
+    \sin x - \sin y = 2\sin \left(\frac{x-y}{2}\right)\cos \left(\frac{x+y}{2}\right) 
+\end{gather*} 
+\begin{gather*}
+    \tan (x+y) = \frac{\tan x + \tan y}{1 - \tan x \tan y} \\
+    \tan (x-y) = \frac{\tan x - \tan y}{1 + \tan x \tan y} \\
+    \cot (x+y) = \frac{\cot x \cot y - 1}{\cot x + \cot y} \\
+    \cot (x-y) = \frac{\cot x \cot y + 1}{\cot x - \cot y}
+\end{gather*}
+\begin{gather*}
+    \sin(2x) = 2\sin x\cos x \\
+    \cos(2x) = \cos ^2x - \sin ^2x = 2\cos ^2x - 1 = 1 - 2\sin ^2x \\
+    2\sin^2x = 1 - \cos(2x) \\
+    2\cos^2x = 1 + \cos(2x) 
+\end{gather*}
+\begin{gather*}
+    \sin x = \frac{\tan x}{\sqrt{1+\tan^2 x}} \\
+    \cos x = \frac{1}{\sqrt{1+\tan^2 x}}
+\end{gather*}
+\begin{gather*}
+    \tan(2x) = \frac{2\tan x}{1-\tan^2x} \\
+    \cot(2x) = \frac{\cot^2x - 1}{2\cot x} \\
+    \sin(2x) = \frac{2\tan x}{1 + \tan^2x} \\
+    \cos(2x) = \frac{1-\tan^2x}{1+\tan^2x}
+\end{gather*}
+\begin{gather*}
+    \sin(3x) = 3\sin x - 4\sin^3x \\
+    \cos(3x) = 4\cos^3x - 3\cos x
+\end{gather*}
+\begin{gather*}
+    (\cos x)' = -\sin x \\
+    (\sin x)' = \cos x \\
+    (\tan x)' = \sec^2x = 1 + \tan^2x \\
+    (\cot x)' = -\csc^2x = -(1 + \cot^2x)
+\end{gather*}
+\begin{gather*}
+    (\arcsin x)' = \frac{1}{\sqrt{1-x^2}} \\
+    (\arccos x)' = -\frac{1}{\sqrt{1-x^2}} \\
+    (\arctan x)' = \frac{1}{1+x^2} \\
+    (\arccot x)' = -\frac{1}{1+x^2} \\
+    (\arcsec x)' = \frac{1}{x^2\sqrt{1-\frac{1}{x^2}}} \\
+    (\arccsc x)' = -\frac{1}{x^2\sqrt{1-\frac{1}{x^2}}} 
+\end{gather*}
+\begin{gather*}
+    \sin(\arccos x) = \cos(\arcsin x) = \sqrt{1-x^2} \\
+    \tan(\arcsin x) = \frac{x}{\sqrt{1-x^2}} \\
+    \tan(\arccos x) = \frac{\sqrt{1-x^2}}{x} 
+\end{gather*}
+\begin{gather}
+    
+\end{gather}
+ 
+\end{document}
