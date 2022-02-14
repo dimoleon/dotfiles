@@ -48,7 +48,16 @@
 - (wob //aur)
 - kanshi
 
+## Shell 
+- zsh 
+- zsh-completion
+- zsh-autosuggestions
+
 ## Command line utilities
+- polkit
+- pkgstats
+- mesa-utils
+- wget
 - usbutils
 - tlp (enable tlp) 
 - gnupg
@@ -65,11 +74,7 @@
 - exa
 - htop
 - firewalld (firewalld.service)
-- bluez (enable bluetooth)
-- bluez-utils
-- cups
 - bc
-- gnome-calculator or genius
 - units (command line unit converter, check it out)
 - termdown
 - mtools 
@@ -86,12 +91,15 @@
 - inetutils
 - bash-completion
 - acpi
-- acpi_call
-- acpid (enable acpid)
+- acpid (enable acpid) (old method of power management)
 - openbsd-netcat
 - openssh (enable sshd)
+- udisks2
+- udiskie (automounting drives)
+- etc-update (for .pacnew merging)
+- pacman-contrib
 
-## Audio
+## Audio, Bluetooth, Printing
 - pipewire
 - pipewire-pulse
 - pipewire-jack
@@ -100,11 +108,14 @@
 - wireplumber
 - (helvum)
 - (pavucontrol)
+- bluez (enable bluetooth)
+- bluez-utils
+- cups
 
 ## Applications 
 - firefox
 - youtube-dl
-- discord
+- discord (maybe try discord_arch_electron from the aur)
 - reflector (reflector.timer)
 - zathura zathura-mupdf
 - evince
@@ -123,6 +134,8 @@
 - texlive-core and friends
 - texmaker ?, qtikz or tikzit(aur)
 - geogebra
+- gnome-calculator or genius
+- cmatrix (hollywood terminal)
 
 ## Arch User Repository
 - paru
@@ -130,23 +143,30 @@
 - megasync-bin
 - zoom-bin 
 - tor-browser
+- nvim-packer-git
+- (atool for file decompression)
+- ventoy-bin (for multiboot usb)
+- pandoc-bin (check how pandoc works)
+
+## Font packages
+- ttf-cascadia-code
+- nerd font
+- copy microsoft fonts from mega to .local/share/fonts
 
 ---
-## Enable services
-systemctl enable NetworkManager
-systemctl enable bluetooth
-systemctl enable cups.service
-systemctl enable sshd
-systemctl enable avahi-daemon
-systemctl enable tlp 
-systemctl enable reflector.timer
-systemctl enable fstrim.timer
-systemctl enable firewalld
-systemctl enable acpid
-systemctl enable update.timer ?
-systemctl enable ly.service ? 
-systemctl enable pipewire-pulse.service
-
-
-
+# Enable services
+systemctl enable NetworkManager \ 
+systemctl enable bluetooth      \
+systemctl enable cups.service   \
+systemctl enable sshd           \
+systemctl enable avahi-daemon   \
+systemctl enable tlp.service    \
+systemctl enable reflector.timer\
+systemctl enable fstrim.timer   \
+systemctl enable firewalld      \
+(old method) systemctl enable acpid          \
+systemctl enable update.timer ? \
+systemctl enable ly.service ?   \
+systemctl enable pipewire-pulse.service \
+systemctl enable systemd-timesyncd.service \
 
