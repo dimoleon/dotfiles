@@ -135,6 +135,7 @@
 - texmaker ?, qtikz or tikzit(aur)
 - geogebra
 - gnome-calculator or genius
+- gnome-clocks
 - cmatrix (hollywood terminal)
 
 ## Arch User Repository
