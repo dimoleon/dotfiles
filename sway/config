@@ -1,0 +1,228 @@
+# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
+output * bg ~/Pictures/Wallpapers/dark_jellyfish.jpg fill
+
+# Logo key. Use Mod1 for Alt.
+set $mod Mod4
+
+# Home row direction keys, like vim
+set $left h
+set $down j
+set $up k
+set $right l
+
+# Your preferred terminal emulator
+set $term kitty
+
+#set $menu dmenu_path | dmenu | xargs swaymsg exec --
+set $menu wofi --show drun -I -i
+bindsym --to-code $mod+period exec $menu 
+
+# Start a terminal
+bindsym --to-code $mod+Return exec $term
+
+# Kill focused window
+bindsym --to-code $mod+x kill
+
+# Change normal to inverse to use left mouse button for resizing and right
+# mouse button for dragging.
+floating_modifier $mod normal
+
+# Reload the configuration file
+bindsym --to-code $mod+Shift+c reload
+
+# Exit sway (logs you out of your Wayland session)
+bindsym --to-code $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
+
+# Moving around:
+
+# Move your focus around
+bindsym --to-code $mod+$left focus left
+bindsym --to-code $mod+$down focus down
+bindsym --to-code $mod+$up focus up
+bindsym --to-code $mod+$right focus right
+
+# Or use $mod+[up|down|left|right]
+bindsym --to-code $mod+Left focus left
+bindsym --to-code $mod+Down focus down
+bindsym --to-code $mod+Up focus up
+bindsym --to-code $mod+Right focus right
+
+# Move the focused window with the same, but add Shift
+bindsym --to-code $mod+Shift+$left move left
+bindsym --to-code $mod+Shift+$down move down
+bindsym --to-code $mod+Shift+$up move up
+bindsym --to-code $mod+Shift+$right move right
+
+# Ditto, with arrow keys
+bindsym --to-code $mod+Shift+Left move left
+bindsym --to-code $mod+Shift+Down move down
+bindsym --to-code $mod+Shift+Up move up
+bindsym --to-code $mod+Shift+Right move right
+
+# Workspaces:
+
+set $ws1 1 
+set $ws2 2
+set $ws3 3
+set $ws4 4
+set $ws5 5
+set $ws6 6
+set $ws7 7
+set $ws8 8
+set $ws9 9 
+set $ws10 10
+
+# Switch to workspace
+bindsym --to-code $mod+1 workspace number $ws1 
+bindsym --to-code $mod+2 workspace number $ws2 
+bindsym --to-code $mod+3 workspace number $ws3 
+bindsym --to-code $mod+4 workspace number $ws4 
+bindsym --to-code $mod+5 workspace number $ws5 
+bindsym --to-code $mod+6 workspace number $ws6 
+bindsym --to-code $mod+7 workspace number $ws7 
+bindsym --to-code $mod+8 workspace number $ws8 
+bindsym --to-code $mod+9 workspace number $ws9 
+bindsym --to-code $mod+0 workspace number $ws10
+
+# Move focused container to workspace
+bindsym --to-code $mod+Shift+1 move container to workspace number $ws1 
+bindsym --to-code $mod+Shift+2 move container to workspace number $ws2 
+bindsym --to-code $mod+Shift+3 move container to workspace number $ws3 
+bindsym --to-code $mod+Shift+4 move container to workspace number $ws4 
+bindsym --to-code $mod+Shift+5 move container to workspace number $ws5 
+bindsym --to-code $mod+Shift+6 move container to workspace number $ws6 
+bindsym --to-code $mod+Shift+7 move container to workspace number $ws7 
+bindsym --to-code $mod+Shift+8 move container to workspace number $ws8 
+bindsym --to-code $mod+Shift+9 move container to workspace number $ws9 
+bindsym --to-code $mod+Shift+0 move container to workspace number $ws10
+
+# Layout stuff:
+bindsym --to-code $mod+b splith
+bindsym --to-code $mod+v splitv
+
+# Switch the current container between different layout styles
+bindsym --to-code $mod+s layout stacking
+bindsym --to-code $mod+w layout tabbed
+bindsym --to-code $mod+e layout toggle split
+
+# Make the current focus fullscreen
+bindsym --to-code $mod+f fullscreen
+
+# Toggle the current focus between tiling and floating mode
+bindsym --to-code $mod+Shift+space floating toggle
+
+# Swap focus between the tiling area and the floating area
+bindsym --to-code $mod+space focus mode_toggle
+
+# Move focus to the parent container
+bindsym --to-code $mod+a focus parent
+
+# Move the currently focused window to the scratchpad
+bindsym --to-code $mod+Shift+minus move scratchpad
+bindsym --to-code $mod+minus scratchpad show
+
+# Resizing containers:
+mode "resize" {
+    bindsym --to-code $left resize shrink width 10px
+    bindsym --to-code $down resize grow height 10px
+    bindsym --to-code $up resize shrink height 10px
+    bindsym --to-code $right resize grow width 10px
+
+    # Ditto, with arrow keys
+    bindsym --to-code Left resize shrink width 10px
+    bindsym --to-code Down resize grow height 10px
+    bindsym --to-code Up resize shrink height 10px
+    bindsym --to-code Right resize grow width 10px
+
+    # Return to default mode
+    bindsym --to-code Return mode "default"
+    bindsym --to-code Escape mode "default"
+    bindsym --to-code $mod+r mode "resize"
+}
+
+# Overlay bar (wob)
+set $WOBSOCK $XDG_RUNTIME_DIR/wob.sock
+exec mkfifo $WOBSOCK && tail -f $WOBSOCK | wob
+exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
+
+# Volume control (pulseaudio)
+bindsym --locked XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym --locked XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym --locked XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+
+# Brightness control (brightnessctl)
+bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%- | sed -En 's/.*\(([0-9]+)%\).*/\1/p' > $WOBSOCK
+bindsym --locked XF86MonBrightnessUp exec brightnessctl set +5% | sed -En 's/.*\(([0-9]+)%\).*/\1/p' > $WOBSOCK
+
+
+# Status Bar:
+bar {
+    position top
+#   colors {
+#       background #282A36
+#       statusline #F8F8F2
+#       separator  #44475A
+#
+#       focused_workspace  #44475A #44475A #F8F8F2
+#       active_workspace   #282A36 #44475A #F8F8F2
+#       inactive_workspace #282A36 #282A36 #BFBFBF
+#       urgent_workspace   #FF5555 #FF5555 #F8F8F2
+#       binding_mode       #FF5555 #FF5555 #F8F8F2
+#   }
+    swaybar_command waybar
+}
+
+# Keyboard changes
+input "type:keyboard" {           
+    xkb_layout us,gr
+    xkb_options grp:alt_shift_toggle,caps:swapescape
+    xkb_numlock enable
+}
+
+#wlsunset - adjust night light
+exec_always wlsunset -l 40.6 -L 22.9
+
+# Borders and gaps
+default_border pixel 2
+
+# Set up gaps 
+smart_gaps on 
+smart_borders no_gaps
+gaps inner 3
+#gaps outer 0
+
+
+#Colors (dracula theme for i3)
+# class                 border  bground text    indicator child_border
+client.focused          #FFFFFF #FFFFFF #F8F8F2 #FFFFFF   #FFFFFF
+client.focused_inactive #44475A #44475A #F8F8F2 #44475A   #44475A
+client.unfocused        #282A36 #282A36 #BFBFBF #282A36   #282A36
+client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
+client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
+
+client.background       #F8F8F2
+
+# Fonts
+font pango:Calibri Bold 12
+
+# Screenshots
+bindsym --to-code Print exec grim $(xdg-user-dir PICTURES)/$(date +'%screenshot_%d-%m%y-%H:%M.png') 
+bindsym --to-code Mod1+Print exec grim -g "$(slurp)" $(xdg-user-dir PICTURES)/$(date +'screenshot_%d-%m%y-%H:%M.png')
+
+# Enable automounting (udiskie)
+exec udiskie --tray
+
+# Network manager applet 
+exec nm-applet --indicator 
+
+# Calendar floating, works with waybar
+for_window [app_id="gnome-calendar"] floating enable
+for_window [app_id="megasync"] floating enable
+for_window [app_id="eog"] move container to workspace number $ws8, workspace number $ws8
+for_window [app_id="mpv"] move container to workspace number $ws9, workspace number $ws9
+for_window [app_id="evince"] move container to workspace number $ws10, workspace number $ws10
+for_window [app_id="gnome-clocks"] move container to workspace number $ws9, workspace number $ws9
+
+
+# Default scripts I know nothing about
+include /etc/sway/config.d/*

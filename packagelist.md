@@ -41,7 +41,6 @@
 - mako
 - wl-sunset
 - brightnessctl
-- ly (login manager)
 - wofi or rofi
 - dmenu or bemenu
 - (wev)
@@ -52,6 +51,7 @@
 - zsh 
 - zsh-completion
 - zsh-autosuggestions
+- zsh-syntax-highlighting
 
 ## Command line utilities
 - polkit
@@ -76,7 +76,6 @@
 - firewalld (firewalld.service)
 - bc
 - units (command line unit converter, check it out)
-- termdown
 - mtools 
 - dosfstools
 - avahi (enable avahi-daemon)
@@ -110,7 +109,7 @@
 - (pavucontrol)
 - bluez (enable bluetooth)
 - bluez-utils
-- cups
+- cups (printing)
 
 ## Applications 
 - firefox
@@ -142,7 +141,7 @@
 - paru
 - google-chrome-stable
 - megasync-bin
-- zoom-bin 
+- zoom
 - tor-browser
 - nvim-packer-git
 - (atool for file decompression)
