@@ -21,6 +21,7 @@ prompt redhat
 # Aliases 
 alias ls='exa -al --color=always --group-directories-first'
 alias cat='bat'
+alias less='bat'
 alias grep='grep --color=auto'
 
 alias cp='cp -i'

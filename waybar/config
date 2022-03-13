@@ -1,7 +1,7 @@
 {
     "modules-left": ["sway/workspaces", "sway/mode"],
     "modules-center": ["clock", "idle_inhibitor"],
-    "modules-right": ["tray", "custom/scratchpad-indicator", "pulseaudio", "temperature", "battery", "custom/power", "custom/menu"],
+    "modules-right": ["tray", "custom/scratchpad-indicator", "sway/language", "pulseaudio", "temperature", "battery", "custom/power", "custom/menu"],
 
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
@@ -36,6 +36,9 @@
     // "memory": {
     //     "format": "{}% "
     // },
+    "sway/language": {
+        "format": "{}",
+    },
     "temperature": {
         "hwmon-path": "/sys/class/hwmon/hwmon3/temp1_input",
         "critical-threshold": 82,

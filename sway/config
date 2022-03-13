@@ -14,9 +14,9 @@ set $right l
 set $term kitty
 
 #set $menu dmenu_path | dmenu | xargs swaymsg exec --
-set $menu wofi --show drun -I -i
+set $menu wofi --show drun -I -i 
 bindsym --to-code $mod+period exec $menu 
-bindsym --to-code Mod1+Tab exec ~/.local/bin/wofi_window_switch.sh
+#bindsym --to-code Mod1+Tab exec ~/.local/bin/wofi_window_switch.sh
 
 # Start a terminal
 bindsym --to-code $mod+Return exec $term
@@ -192,10 +192,9 @@ smart_borders no_gaps
 gaps inner 3
 #gaps outer 0
 
-
 #Colors (dracula theme for i3)
 # class                 border  bground text    indicator child_border
-client.focused          #FFFFFF #FFFFFF #F8F8F2 #FFFFFF   #FFFFFF
+client.focused          #6272A4 #6272A4 #F8F8F2 #6272A4   #6272A4
 client.focused_inactive #44475A #44475A #F8F8F2 #44475A   #44475A
 client.unfocused        #282A36 #282A36 #BFBFBF #282A36   #282A36
 client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
@@ -203,8 +202,9 @@ client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
 
 client.background       #F8F8F2
 
+
 # Fonts
-font pango:Calibri Bold 12
+font pango:DejaVu Sans 8
 
 # Screenshots
 bindsym --to-code Print exec grim $(xdg-user-dir PICTURES)/$(date +'%screenshot_%d-%m%y-%H:%M.png') 

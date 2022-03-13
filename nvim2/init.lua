@@ -22,6 +22,7 @@ set.splitbelow = true
 set.splitright = true
 
 set.cursorline = true
+set.signcolumn = 'yes'
 set.termguicolors = true
 
 set.hidden = true
@@ -104,7 +105,7 @@ capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { 'clangd' }
+local servers = { 'clangd', 'pyright' }
 for _, lsp in ipairs(servers) do
     nvim_lsp[lsp].setup {
         on_attach = on_attach,
