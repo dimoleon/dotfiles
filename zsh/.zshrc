@@ -20,7 +20,7 @@ prompt redhat
 
 # Aliases 
 alias ls='exa -al --color=always --group-directories-first'
-alias cat='bat'
+alias cat='batcat'
 alias less='bat'
 alias grep='grep --color=auto'
 
@@ -42,11 +42,31 @@ export PDFVIEWER='evince'
 export PATH=$PATH:$HOME/.local/bin
 export PYTHONPATH="$PYTHONPATH:$HOME/.local/lib/python"
 
+# zplug - manage plugins
+source /usr/share/zplug/init.zsh
+zplug "plugins/git", from:oh-my-zsh
+zplug "plugins/sudo", from:oh-my-zsh
+zplug "plugins/command-not-found", from:oh-my-zsh
+zplug "zsh-users/zsh-syntax-highlighting"
+zplug "zsh-users/zsh-autosuggestions"
+zplug "zsh-users/zsh-history-substring-search"
+zplug "zsh-users/zsh-completions"
+zplug "junegunn/fzf"
+zplug "themes/robbyrussell", from:oh-my-zsh, as:theme   # Theme
+
+# zplug - install/load new plugins when zsh is started or reloaded
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
+zplug load #--verbose
 #setxkbmap -model pc105 -layout us,gr -option grp:alt_shift_toggle
 #setxkbmap -option caps:swapescape
 
 # Syntax highlighting & Autosuggestions 
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+#source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+#source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 

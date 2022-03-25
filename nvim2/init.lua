@@ -3,7 +3,7 @@ require('packerconfig')
 
 -- General Settings -- 
 local set = vim.opt
-
+   
 vim.notify = require("notify")
 
 set.expandtab = true
@@ -214,17 +214,14 @@ require("indent_blankline").setup {
 -- Telescope config -- 
 require('telescope').setup {
     extensions = {
-        fzf = {
-            fuzzy = true,
-            override_generic_sorter = true, 
+        fzy_native = {
+            override_generic_sorter = false, 
             override_file_sorter = true,
-            case_mode = "smart_case",
-
         }
     }
 }
 
-require('telescope').load_extension('fzf')
+require('telescope').load_extension('fzy_native')
 
 -- Keybindings -- 
 local map = vim.api.nvim_set_keymap

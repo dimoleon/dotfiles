@@ -22,7 +22,7 @@ return require'packer'.startup(function()
         'nvim-telescope/telescope.nvim',                            --telescope 
         requires = { {'nvim-lua/plenary.nvim'} }
     }
-    use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' } --telescope fzf source
+    use {'nvim-telescope/telescope-fzy-native.nvim', run = 'make' } --telescope fzf source
 
 end)
 
