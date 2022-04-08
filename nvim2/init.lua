@@ -166,7 +166,7 @@ cmp.setup {
 -- Treesitter configuration -- 
 require'nvim-treesitter.configs'.setup {
 
-    ensure_installed = "c", "cpp", "latex", "lua", "python", "markdown",
+    ensure_installed = { "c", "cpp", "latex", "lua", "python", "markdown" },
 
     highlight = {
         enable = true,
