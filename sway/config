@@ -214,7 +214,7 @@ bindsym --to-code Mod1+Print exec grim -g "$(slurp)" $(xdg-user-dir PICTURES)/$(
 bindsym --to-code $mod+c exec swaylock
 
 # Enable automounting (udiskie)
-exec udiskie --tray
+#exec udiskie --tray
 
 # Network manager applet 
 exec nm-applet --indicator 
