@@ -24,6 +24,9 @@ return require'packer'.startup(function()
     }
     use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' } --telescope fzf source
 
+    use 'tpope/vim-fugitive'        --git integration
+    use 'airblade/vim-gitgutter'    --git sign column
+
 end)
 
 
