@@ -1,7 +1,7 @@
 -- Lua modules
 require('packerconfig')
 require('settings')
-require('colorschemes.tokyonight')
+require('colorschemes.onedark')
 require('nvimtree')
 require('statusline')
 require('autopairs')

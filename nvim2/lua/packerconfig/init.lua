@@ -1,6 +1,7 @@
 return require'packer'.startup(function()
     use 'wbthomason/packer.nvim'    --plugin manager
     use 'folke/tokyonight.nvim'     --tokyonight colorscheme
+    use 'olimorris/onedarkpro.nvim'
     use 'kyazdani42/nvim-web-devicons' --nerd icons
     use 'kyazdani42/nvim-tree.lua'  --nerd tree
     use 'rcarriga/nvim-notify'      --notification manager
@@ -26,7 +27,12 @@ return require'packer'.startup(function()
 
     use 'tpope/vim-fugitive'        --git integration
     use 'airblade/vim-gitgutter'    --git sign column
-
+    use {                           --comments
+        'numToStr/Comment.nvim',
+        config = function()
+            require('Comment').setup()
+        end
+    }
 end)
 
 
