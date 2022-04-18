@@ -3,11 +3,13 @@
     font-family: Font Awesome, Roboto, Arial, sans-serif;
     font-size: 15px;
     color: #ffffff;
-    border-radius: 20px;
+    border-radius: 15px;
 }
 
 window {
 	/*font-weight: bold;*/
+    padding: 0;
+    margin: 0;
 }
 window#waybar {
     background: rgba(0, 0, 0, 0);
@@ -60,8 +62,8 @@ window#waybar {
 }
 #custom-power {
     background-color: rgba(0,119,179,0.6);
-    border-radius: 50px;
-    margin: 5px 5px;
+    border-radius: 25px;
+    margin: 3px 3px;
     padding: 1px 3px;
 }
 /*-----Indicators----*/

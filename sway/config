@@ -227,6 +227,5 @@ for_window [app_id="mpv"] move container to workspace number $ws9, workspace num
 for_window [app_id="evince"] move container to workspace number $ws10, workspace number $ws10, workspace_layout tabbed
 for_window [app_id="gnome-clocks"] move container to workspace number $ws9, workspace number $ws9
 
-
 # Default scripts I know nothing about
 include /etc/sway/config.d/*

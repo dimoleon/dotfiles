@@ -6,5 +6,7 @@ setxkbmap -option caps:swapescape
 
 # Environment Variables
 
+#This is a comment
+
 
 
