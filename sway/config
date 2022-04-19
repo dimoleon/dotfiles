@@ -225,7 +225,10 @@ for_window [app_id="megasync"] floating enable
 for_window [app_id="eog"] move container to workspace number $ws8, workspace number $ws8
 for_window [app_id="mpv"] move container to workspace number $ws9, workspace number $ws9
 for_window [app_id="evince"] move container to workspace number $ws10, workspace number $ws10, workspace_layout tabbed
-for_window [app_id="gnome-clocks"] move container to workspace number $ws9, workspace number $ws9
 
 # Default scripts I know nothing about
 include /etc/sway/config.d/*
+
+# X compatibility layer
+xwayland disable
+
