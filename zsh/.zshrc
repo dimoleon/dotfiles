@@ -69,4 +69,9 @@ export PYTHONPATH="$PYTHONPATH:$HOME/.local/lib/python"
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-
+# Theme (oh my zsh)
+# ZSH_THEME="robbyrussell"
+#
+# plugins=(
+#     git
+# )
