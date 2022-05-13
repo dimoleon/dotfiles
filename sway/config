@@ -243,6 +243,9 @@ for_window [app_id="evince"] move container to workspace number $ws10, workspace
 # Default scripts I know nothing about
 include /etc/sway/config.d/*
 
+# Get my passwords back
+exec_always --no-startup-id gnome-keyring-daemon --start --components=pkcs11
+
 # X compatibility layer
 #xwayland disable
 
