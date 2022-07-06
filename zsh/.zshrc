@@ -11,8 +11,8 @@ bindkey -v
 zstyle :compinstall filename '/home/giannis/.zshrc'
 autoload -Uz compinit
 compinit
-# End of lines added by compinstall
-
+# # End of lines added by compinstall
+#
 # Zsh prompt
 autoload -Uz promptinit
 promptinit
@@ -36,42 +36,32 @@ alias fzfo='xdg-open "$(rg --files | fzf)"'
 # Exports 
 export EDITOR='nvim'
 export VISUAL='nvim'
-export TERM='xterm-kitty'
+# export TERM='xterm-kitty'
 export TERMINAL='xterm-kitty'
 export PDFVIEWER='evince'
 export PATH=$PATH:$HOME/.local/bin
 export PYTHONPATH="$PYTHONPATH:$HOME/.local/lib/python"
 
 # zplug - manage plugins
-#source /usr/share/zplug/init.zsh
-#zplug "plugins/git", from:oh-my-zsh
-#zplug "plugins/sudo", from:oh-my-zsh
-#zplug "plugins/command-not-found", from:oh-my-zsh
-#zplug "zsh-users/zsh-syntax-highlighting"
-#zplug "zsh-users/zsh-autosuggestions"
-#zplug "zsh-users/zsh-history-substring-search"
-#zplug "zsh-users/zsh-completions"
-#zplug "junegunn/fzf"
-#zplug "themes/robbyrussell", from:oh-my-zsh, as:theme   # Theme
-
+# source /usr/share/zplug/init.zsh
+# zplug "plugins/git", from:oh-my-zsh
+# zplug 'dracula/zsh', as:theme
+#
 # zplug - install/load new plugins when zsh is started or reloaded
-#if ! zplug check --verbose; then
+# if ! zplug check --verbose; then
 #    printf "Install? [y/N]: "
 #    if read -q; then
 #        echo; zplug install
 #    fi
-#fi
-#zplug load #--verbose
+# fi
+# zplug load #--verbose
 #setxkbmap -model pc105 -layout us,gr -option grp:alt_shift_toggle
 #setxkbmap -option caps:swapescape
 
-# Syntax highlighting & Autosuggestions 
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-# Theme (oh my zsh)
-# ZSH_THEME="robbyrussell"
-#
-# plugins=(
-#     git
-# )
+# Syntax highlighting & Autosuggestions 
+source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/dotfiles/zsh/git.zsh
+# source ~/dotfiles/zsh/robbyrussell.zsh
+source ~/Documents/sources/powerlevel10k/powerlevel10k.zsh-theme

@@ -1,6 +1,6 @@
 {
     "modules-left": ["sway/workspaces", "sway/mode"],
-    "modules-center": ["clock", "idle_inhibitor"],
+    "modules-center": ["clock#date", "clock#time", "idle_inhibitor"],
     "modules-right": ["tray", "custom/scratchpad-indicator", "sway/language", "pulseaudio", "temperature", "battery", "custom/power", "custom/menu"],
 
     "sway/mode": {
@@ -24,11 +24,24 @@
         "icon-size": 15,
         "spacing": 10
     },
-    "clock": {
+
+    "clock#time": {
+		"interval": 10,
+		"format": "{:%H:%M}",
+		"tooltip": false
+	},
+
+	"clock#date": {
+		"interval": 20,
+		"format": "{:%e %b %Y}", // Icon: calendar-alt
+		//"tooltip-format": "{:%e %B %Y}"
+		"tooltip": false
+		//"on-click": "gnome-calendar"
+	},
+    //"clock": {
         // "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         // "format-alt": "{:%Y-%m-%d}"
-		"on-click": "gnome-calendar"
-    },
+    //},
     // "cpu": {
     //     "format": "{usage}% ",
     //     "tooltip": false
