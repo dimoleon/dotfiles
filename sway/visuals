@@ -1,0 +1,17 @@
+
+output * bg ~/Pictures/Wallpapers/dark_jellyfish.jpg fill
+
+bar {
+    position top
+    swaybar_command waybar
+}
+
+default_border pixel 2
+
+smart_gaps on 
+smart_borders no_gaps
+gaps inner 3
+
+font Roboto 8
+
+seat * hide_cursor 10000
