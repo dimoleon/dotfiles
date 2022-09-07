@@ -1,5 +1,10 @@
 # New sway Config
 
+bar {
+    position top
+    swaybar_command waybar
+}
+
 set {
     $super  Mod4
     $alt    Mod1
@@ -50,6 +55,13 @@ bindsym --to-code {
     $super+$right  focus right
 }
 
+bindsym --to-code { 
+    $super+Shift+$left  move left
+    $super+Shift+$down  move down
+    $super+Shift+$up    move up
+    $super+Shift+$right move right
+}
+
 # Resize
 bindsym --to-code {
     $super+Control+$left   resize shrink width $resize_factor
@@ -90,7 +102,7 @@ bindsym --to-code {
     $super+f            fullscreen
     $super+Shift+space  floating toggle
     $super+space        focus mode_toggle
-    $super+colon        scratchpad show
+    $super+semicolon    scratchpad show
     $super+comma        sticky toggle 
     $super+apostrophe   move scratchpad
 }
@@ -117,7 +129,7 @@ bindsym --locked {
 }
 
 bindsym --to-code {
-    $super+period   exec $menu wofi --show drun -I -i
+    $super+period   exec $menu wofi --show drun -I -i | xargs swaymsg exec -- 
     $super+Return   exec kitty    
     $super+r        exec kitty -e ranger
     Print exec grim $(xdg-user-dir PICTURES)/$(date +'%screenshot_%d-%m%y-%H:%M.png') 
@@ -131,6 +143,7 @@ mode $session_mode bindsym --to-code {
     q       exec swaymsg exit, mode "default"
     s       exec systemctl suspend, mode "default"
     c       exec swaylock, mode "default"
+    p       exec systemctl poweroff, mode "defualt"
     escape  mode "default"
 }
 
@@ -139,13 +152,22 @@ exec swayidle -w \
      timeout 480  'swaymsg "output * dpms off"' \
 	  resume  'swaymsg "output * dpms on"' \
      timeout 1020 'systemctl suspend' \
-     before-sleep 'swaylock'
+     # before-sleep 'swaylock'
+
+# for_window [app_id="gnome-calendar"] floating enable
+for_window [app_id="megasync"] floating enable
+for_window [app_id="eog"] move container to workspace number $ws8, workspace number $ws8
+for_window [app_id="mpv"] move container to workspace number $ws9, workspace number $ws9
+for_window [app_id="evince"] move container to workspace number $ws10, workspace number $ws10, workspace_layout tabbed
+for_window [app_id="foliate"] move container to workspace number $ws10, workspace number $ws10
+for_window [app_id="com.github.johnfactotum.Foliate"] move container to workspace number $ws10, workspace number $ws10
 
 exec_always wlsunset -l 40.6 -L 22.9
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec nm-applet --indicator 
 exec eval $(gnome-keyring-daemon --start)
 exec export SSH_AUTH_SOCK
+exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
 
 include /etc/sway/config.d/*
 include rules
