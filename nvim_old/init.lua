@@ -1,0 +1,15 @@
+-- Lua modules
+require('lib.packerconfig')
+require('lib.settings')
+require('lib.colorschemes.tokyonight')
+require('lib.nvimtree')
+require('lib.statusline')
+-- require('lib.autopairs')
+-- require('lib.lspconfig')
+-- require('lib.cmp')
+require('lib.treesitter')
+require('lib.coc')
+require('lib.blanklineconfig')
+require('lib.telescope')
+require('lib.mappings')
+

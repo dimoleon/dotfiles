@@ -2,7 +2,7 @@
 -- Statusline Configuration -- 
 require('lualine').setup {
     options = {
-        theme = 'onedark'
+        theme = 'tokyonight'
     }
 }
 
