@@ -1,6 +1,6 @@
-vim.g.mapleader = " " 
+vim.g.mapleader = " "
 
-local keymap = vim.keymap 
+local keymap = vim.keymap
 local opts = { noremap = true, silent = true }
 
 -- general 
@@ -10,8 +10,8 @@ keymap.set("n", "<leader>+", "<C-a>")
 keymap.set("n", "<leader>-", "<C-x>")
 keymap.set('n', '<C-h>', '<C-w>h', opts)
 keymap.set('n', '<C-l>', '<C-w>l', opts)
-keymap.set('n', '<C-j>', '<C-j>h', opts)
-keymap.set('n', '<C-k>', '<C-k>h', opts)
+keymap.set('n', '<C-j>', '<C-w>j', opts)
+keymap.set('n', '<C-k>', '<C-w>k', opts)
 
 
 -- plugin keymaps 

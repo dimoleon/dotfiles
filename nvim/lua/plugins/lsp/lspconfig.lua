@@ -40,6 +40,18 @@ lspconfig["clangd"].setup({
     on_attach = on_attach,
 })
 
+-- Python 
+lspconfig["pyright"].setup({
+    capabilities = capabilities,
+    on_attach = on_attach,
+})
+
+-- Java 
+lspconfig["jdtls"].setup({
+    capabilities = capabilities,
+    on_attach = on_attach,
+})
+
 -- Lua 
 lspconfig["sumneko_lua"].setup({
     capabilities = capabilities,
@@ -56,5 +68,18 @@ lspconfig["sumneko_lua"].setup({
                 },
             },
         },
+    },
+})
+
+-- Rust 
+local rt_status, rt = pcall(require, "rust-tools")
+rt.setup({
+    server = {
+        on_attach = function(_, bufnr)
+            -- Hover actions
+            vim.keymap.set("n", "<C-space>", rt.hover_actions.hover_actions, { buffer = bufnr })
+            -- Code action groups
+            vim.keymap.set("n", "<Leader>a", rt.code_action_group.code_action_group, { buffer = bufnr })
+        end,
     },
 })

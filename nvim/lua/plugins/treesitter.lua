@@ -18,6 +18,9 @@ treesitter.setup({
         "bash",
         "vim",
         "gitignore",
+        -- "latex",
+        "rust",
+        "toml",
     },
     autoinstall = true
 })

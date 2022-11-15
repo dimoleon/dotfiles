@@ -1,21 +1,21 @@
 local ensure_packer = function()
-  local fn = vim.fn
-  local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
-  if fn.empty(fn.glob(install_path)) > 0 then
-    fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
-    vim.cmd [[packadd packer.nvim]]
-    return true
-  end
-  return false
+    local fn = vim.fn
+    local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+    if fn.empty(fn.glob(install_path)) > 0 then
+        fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+        vim.cmd [[packadd packer.nvim]]
+        return true
+    end
+    return false
 end
 
 local packer_bootstrap = ensure_packer()
 
 vim.cmd([[
-  augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost plugins.lua source <afile> | PackerSync
-  augroup end
+    augroup packer_user_config
+        autocmd!
+        autocmd BufWritePost plugins.lua source <afile> | PackerSync
+    augroup end
 ]])
 
 local status, packer = pcall(require, "packer")
@@ -30,7 +30,8 @@ return packer.startup(function(use)
     use("nvim-lua/plenary.nvim")
 
     -- colorscheme
-    use("bluz71/vim-nightfly-guicolors")
+    -- use("bluz71/vim-nightfly-colors")
+    use ("bluz71/vim-moonfly-colors")
 
     -- essentials
     use("tpope/vim-surround")
@@ -61,9 +62,10 @@ return packer.startup(function(use)
     use("hrsh7th/cmp-path")
 
     -- snippets
+    -- use("SirVer/ultisnips")
+    -- use("quangnguyen30192/cmp-nvim-ultisnips")
     use("L3MON4D3/LuaSnip")
     use("saadparwaiz1/cmp_luasnip")
-    use("rafamadriz/friendly-snippets")
 
     -- lsp and linting
     use("williamboman/mason.nvim")
@@ -85,6 +87,12 @@ return packer.startup(function(use)
     -- Git 
     use("lewis6991/gitsigns.nvim")
     use("tpope/vim-fugitive")
+
+    -- Latex 
+    use("lervag/vimtex")
+
+    -- Rust
+    use("simrat39/rust-tools.nvim")
 
     if packer_bootstrap then
         require("packer").sync()
