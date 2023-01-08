@@ -41,10 +41,10 @@ lspconfig["clangd"].setup({
 })
 
 -- Python 
-lspconfig["pyright"].setup({
-    capabilities = capabilities,
-    on_attach = on_attach,
-})
+-- lspconfig["pyright"].setup({
+--     capabilities = capabilities,
+--     on_attach = on_attach,
+-- })
 
 -- Java 
 lspconfig["jdtls"].setup({
@@ -71,7 +71,7 @@ lspconfig["sumneko_lua"].setup({
     },
 })
 
--- Rust 
+-- Rust, using rust-tools, not lspconfig
 local rt_status, rt = pcall(require, "rust-tools")
 rt.setup({
     server = {

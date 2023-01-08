@@ -136,7 +136,7 @@ bindsym --locked {
 }
 
 bindsym --to-code {
-    $super+period   exec $menu wofi --show drun -I -i | xargs swaymsg exec -- 
+    $super+period   exec wofi --show drun -I -i | xargs swaymsg exec
     $super+Return   exec kitty    
     $super+r        exec kitty -e ranger
     Print exec grim $(xdg-user-dir PICTURES)/$(date +'%screenshot_%d-%m%y-%H:%M.png') 
@@ -171,14 +171,14 @@ for_window [app_id="foliate"] move container to workspace number $ws10, workspac
 for_window [app_id="com.github.johnfactotum.Foliate"] move container to workspace number $ws10, workspace number $ws10
 
 exec_always wlsunset -l 40.6 -L 22.9
-exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec /usr/libexec/polkit-kde-authentication-agent-1
 exec nm-applet --indicator 
 # exec blueman-applet
-exec eval $(gnome-keyring-daemon --start)
+# exec eval $(gnome-keyring-daemon --start)
 exec export SSH_AUTH_SOCK
 exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
 
-include /etc/sway/config.d/*
+# include /etc/sway/config.d/*
 include rules
 include visuals
 include colorschemes/solarized

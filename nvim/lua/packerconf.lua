@@ -89,7 +89,7 @@ return packer.startup(function(use)
     use("tpope/vim-fugitive")
 
     -- Latex 
-    use("lervag/vimtex")
+    -- use("lervag/vimtex")
 
     -- Rust
     use("simrat39/rust-tools.nvim")
