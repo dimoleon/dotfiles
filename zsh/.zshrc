@@ -46,7 +46,8 @@ export VISUAL='nvim'
 # export TERM='xterm-kitty'
 export TERMINAL='xterm-kitty'
 export PDFVIEWER='evince'
-export PATH=$PATH:$HOME/.local/bin:$HOME/.cargo/bin:$HOME/.local/share/coursier/bin
+export PATH=$PATH:$HOME/.local/bin:$HOME/.cargo/bin:$HOME/Documents/sources/gcc-arm-none-eabi-10.3-2021.10/bin
+# export PATH=$PATH:$HOME/.local/bin:$HOME/.cargo/bin
 export PYTHONPATH="$PYTHONPATH:$HOME/.local/lib/python"
 
 # zplug - manage plugins

@@ -47,10 +47,10 @@ lspconfig["clangd"].setup({
 -- })
 
 -- Java 
-lspconfig["jdtls"].setup({
-    capabilities = capabilities,
-    on_attach = on_attach,
-})
+-- lspconfig["jdtls"].setup({
+--     capabilities = capabilities,
+--     on_attach = on_attach,
+-- })
 
 -- Lua 
 lspconfig["sumneko_lua"].setup({

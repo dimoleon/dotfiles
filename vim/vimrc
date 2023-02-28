@@ -43,7 +43,7 @@ Plug 'preservim/nerdtree'
 " Plug 'vim-airline/vim-airline'
 " Plug 'bluz71/vim-nightfly-guicolors'
 Plug 'bluz71/vim-moonfly-colors'
-" Plug 'bluz71/vim-moonfly-guicolors'
+Plug 'bluz71/vim-moonfly-guicolors'
 Plug '907th/vim-auto-save'
 Plug 'tpope/vim-commentary'
 call plug#end()
@@ -64,7 +64,7 @@ set conceallevel=1
 let g:tex_conceal='abdmg'
 
 let g:vimtex_compiler_latexmk_engines = {
-    \ '_'                : '-lualatex',
+    \ '_'                : '-xelatex',
     \ 'pdfdvi'           : '-pdfdvi',
     \ 'pdfps'            : '-pdfps',
     \ 'pdflatex'         : '-pdf',
