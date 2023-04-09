@@ -26,17 +26,24 @@ bindkey -v
 
 # Aliases 
 alias ls='exa -al --color=always --group-directories-first'
-alias cat='bat'
-alias less='bat'
+# alias cat='bat'
+alias cat='batcat'
+alias fd='fdfind'
+# alias less='bat'
+alias less='batcat'
 alias grep='grep --color=auto'
+# alias grep='rg'
 
 alias cp='cp -i'
 alias mv='mv -i'
 alias rm='rm -i'
 
+
 alias vim='nvim'
 alias viml='/usr/bin/vim'
 alias ranger='ranger --choosedir=$HOME/.cache/.rangerdir; LASTDIR=`cat $HOME/.cache/.rangerdir`; cd "$LASTDIR"'
+alias r='ranger'
+alias emacs='emacsclient -c -a emacs'
 
 alias fzfo='xdg-open "$(rg --files | fzf)"'
 
@@ -46,7 +53,7 @@ export VISUAL='nvim'
 # export TERM='xterm-kitty'
 export TERMINAL='xterm-kitty'
 export PDFVIEWER='evince'
-export PATH=$PATH:$HOME/.local/bin:$HOME/.cargo/bin:$HOME/Documents/sources/gcc-arm-none-eabi-10.3-2021.10/bin
+export PATH=$HOME/.local/bin:$HOME/.config/emacs/bin:$PATH
 # export PATH=$PATH:$HOME/.local/bin:$HOME/.cargo/bin
 export PYTHONPATH="$PYTHONPATH:$HOME/.local/lib/python"
 
@@ -76,3 +83,12 @@ source ~/Documents/sources/powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# >>> juliaup initialize >>>
+
+# !! Contents within this block are managed by juliaup !!
+
+path=('/home/giannis/Documents/sources/.juliaup/bin' $path)
+export PATH
+
+# <<< juliaup initialize <<<

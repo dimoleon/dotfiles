@@ -35,8 +35,8 @@
 		"interval": 20,
 		"format": "{:%e %b %Y}", // Icon: calendar-alt
 		//"tooltip-format": "{:%e %B %Y}"
-		"tooltip": false
-		//"on-click": "gnome-calendar"
+		"tooltip": false,
+		"on-click": "gnome-calendar"
 	},
     //"clock": {
         // "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",

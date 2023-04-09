@@ -3,6 +3,7 @@
 bar {
     position top
     # status_command while date +'%d/%m/%Y %I:%M:%S %p'; do sleep 1; done
+    # swaybar_command swaybar
     #
     # colors {
     #     statusline #ffffff
@@ -129,10 +130,10 @@ bindsym --locked {
 }
 
 bindsym --locked {
-    XF86MonBrightnessDown exec brightnessctl set 5%-
-    XF86MonBrightnessUp exec brightnessctl set +5%
-#    XF86MonBrightnessUp    exec light -A 5
-#    XF86MonBrightnessDown  exec light -U 5
+    # XF86MonBrightnessDown exec brightnessctl set 5%-
+    # XF86MonBrightnessUp exec brightnessctl set +5%
+   XF86MonBrightnessUp    exec light -A 5
+   XF86MonBrightnessDown  exec light -U 5
 }
 
 bindsym --to-code {
@@ -162,21 +163,29 @@ exec swayidle -w \
      timeout 1020 'systemctl suspend' \
      # before-sleep 'swaylock'
 
-# for_window [app_id="gnome-calendar"] floating enable
+for_window [app_id="gnome-calendar"] floating enable
 for_window [app_id="megasync"] floating enable
 for_window [app_id="gwenview"] move container to workspace number $ws8, workspace number $ws8
+for_window [app_id="eog"] move container to workspace number $ws8, workspace number $ws8
 for_window [app_id="mpv"] move container to workspace number $ws9, workspace number $ws9
+for_window [app_id="vlc"] move container to workspace number $ws9, workspace number $ws9
 for_window [app_id="okular"] move container to workspace number $ws10, workspace number $ws10, workspace_layout tabbed
+for_window [app_id="evince"] move container to workspace number $ws10, workspace number $ws10, workspace_layout tabbed
 for_window [app_id="foliate"] move container to workspace number $ws10, workspace number $ws10
 for_window [app_id="com.github.johnfactotum.Foliate"] move container to workspace number $ws10, workspace number $ws10
 
 exec_always wlsunset -l 40.6 -L 22.9
-exec /usr/libexec/polkit-kde-authentication-agent-1
+# exec /usr/libexec/polkit-kde-authentication-agent-1
 exec nm-applet --indicator 
+exec mako
+
+exec emacs --daemon
 # exec blueman-applet
-# exec eval $(gnome-keyring-daemon --start)
+exec eval $(gnome-keyring-daemon --start)
 exec export SSH_AUTH_SOCK
 exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
+
+xwayland enable
 
 # include /etc/sway/config.d/*
 include rules

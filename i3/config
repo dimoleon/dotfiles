@@ -237,9 +237,9 @@ exec --no-startup-id safeeyes
 for_window [class=".*"] border pixel 2
 
 # Set up gaps 
-smart_gaps on 
-smart_borders no_gaps
-gaps inner 3
+#smart_gaps on 
+#smart_borders no_gaps
+#gaps inner 3
 #gaps outer 0
 
 # Screenshots 
