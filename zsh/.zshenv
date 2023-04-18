@@ -8,3 +8,4 @@ export OBSIDIAN_USE_WAYLAND=1
 #     export SSH_AUTH_SOCK
 # fi
 
+. "$HOME/.cargo/env"

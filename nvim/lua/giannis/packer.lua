@@ -6,6 +6,8 @@ vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
+
+  use 'nvim-lualine/lualine.nvim'
   
   use {
 	  'nvim-telescope/telescope.nvim', tag = '0.1.1',
@@ -24,14 +26,14 @@ return require('packer').startup(function(use)
 	  },
   }
 
-  use 'romgrk/barbar.nvim'
+  -- use 'romgrk/barbar.nvim'
   use 'mbbill/undotree'
   use 'tpope/vim-fugitive'
   use 'lewis6991/gitsigns.nvim'
   
   use {
 	  'VonHeikemen/lsp-zero.nvim',
-	  branch = 'v1.x',
+	  -- branch = 'v1.x',
 	  requires = {
 		  -- LSP Support
 		  {'neovim/nvim-lspconfig'},             -- Required
@@ -51,6 +53,7 @@ return require('packer').startup(function(use)
 		  {'rafamadriz/friendly-snippets'}, -- Optional
 	  }
   }
+  -- use 'p00f/clangd_extensions' 
 
   use {
 	  "windwp/nvim-autopairs",
@@ -64,4 +67,5 @@ return require('packer').startup(function(use)
       end
   }
 
+  use 'Exafunction/codeium.vim'
 end)

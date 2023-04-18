@@ -1,10 +1,21 @@
-local lsp = require('lsp-zero').preset({
-  set_lsp_keymaps = true,
-  manage_nvim_cmp = true,
-  suggest_lsp_servers = false,
-})
+local lsp = require('lsp-zero').preset({})
+
+lsp.on_attach(function(client, bufnr)
+  lsp.default_keymaps({buffer = bufnr})
+end)
+
+-- When you don't have mason.nvim installed
+-- You'll need to list the servers installed in your system
+-- lsp.setup_servers({'tsserver', 'eslint'})
 
 -- (Optional) Configure lua language server for neovim
-lsp.nvim_workspace()
+-- require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
+
+-- require('lspconfig').clangd.setup({
+--     cmd = {
+--         "clangd",
+--         "--query-driver=/usr/bin/arm-none-eabi-gcc"
+--     }
+-- })
 
 lsp.setup()

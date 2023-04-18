@@ -26,11 +26,11 @@ bindkey -v
 
 # Aliases 
 alias ls='exa -al --color=always --group-directories-first'
-# alias cat='bat'
-alias cat='batcat'
-alias fd='fdfind'
-# alias less='bat'
-alias less='batcat'
+alias cat='bat'
+# alias cat='batcat'
+# alias fd='fdfind'
+alias less='bat'
+# alias less='batcat'
 alias grep='grep --color=auto'
 # alias grep='rg'
 
@@ -53,10 +53,10 @@ export VISUAL='nvim'
 # export TERM='xterm-kitty'
 export TERMINAL='xterm-kitty'
 export PDFVIEWER='evince'
-export PATH=$HOME/.local/bin:$HOME/.config/emacs/bin:$PATH
+export PATH=$HOME/.local/bin:$HOME/.cargo/bin:$PATH
 # export PATH=$PATH:$HOME/.local/bin:$HOME/.cargo/bin
-export PYTHONPATH="$PYTHONPATH:$HOME/.local/lib/python"
-
+export PYTHONPATH=/usr/local/lib/python3/dist-packages:$PYTHONPATH
+export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
 # zplug - manage plugins
 # source /usr/share/zplug/init.zsh
 # zplug "plugins/git", from:oh-my-zsh
