@@ -8,6 +8,7 @@ return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 
   use 'nvim-lualine/lualine.nvim'
+  use 'kdheepak/tabline.nvim'
   
   use {
 	  'nvim-telescope/telescope.nvim', tag = '0.1.1',
@@ -16,6 +17,7 @@ return require('packer').startup(function(use)
   }
   
   use { 'bluz71/vim-moonfly-colors', as = 'moonfly' }
+  use 'EdenEast/nightfox.nvim'
 
   use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
 
