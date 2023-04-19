@@ -119,7 +119,7 @@ bindsym --to-code {
     $super+b  splith
     $super+v  splitv
     $super+w  layout tabbed
-#    $super+s  layout stacking
+    $super+t  layout stacking
     $super+e  layout toggle split
 }
 
