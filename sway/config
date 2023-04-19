@@ -56,20 +56,6 @@ input "type:touchpad" {
 
 floating_modifier $super normal 
 
-exec env RUST_BACKTRACE=1 RUST_LOG=swayr=debug swayrd > /tmp/swayrd.log 2>&1
-bindsym --to-code {
-	# $super+comma       exec swayr switch-window
-	$super+Delete      exec swayr quit-window
-	$super+Tab         exec swayr switch-to-urgent-or-lru-window
-	$super+Next        exec swayr next-window all-workspaces
-	$super+Prior       exec swayr prev-window all-workspaces
-	$super+comma       exec swayr switch-workspace-or-window
-	$super+c           exec swayr execute-swaymsg-command
-	$super+Shift+c     exec swayr execute-swayr-command
-}
-
-
-
 bindsym --to-code {
     $super+$left   focus left
     $super+$down   focus down
@@ -103,7 +89,7 @@ bindsym {
     $super+8    workspace $ws8
     $super+9    workspace $ws9
     $super+0    workspace $ws10
-    # $super+tab  workspace back_and_forth
+    $super+tab  workspace back_and_forth
 }
 
 bindsym {
@@ -152,6 +138,7 @@ bindsym --locked {
 
 bindsym --to-code {
     $super+period   exec wofi --show drun -I -i | xargs swaymsg exec
+    $super+comma    exec ~/dotfiles/scripts/wofi_window_switch.py
     $super+Return   exec kitty    
     $super+r        exec kitty -e ranger
     Print exec grim $(xdg-user-dir PICTURES)/$(date +'%screenshot_%d-%m%y-%H:%M.png') 
