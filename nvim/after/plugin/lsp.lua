@@ -11,11 +11,13 @@ end)
 -- (Optional) Configure lua language server for neovim
 -- require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
 
--- require('lspconfig').clangd.setup({
---     cmd = {
---         "clangd",
---         "--query-driver=/usr/bin/arm-none-eabi-gcc"
---     }
--- })
+require('lspconfig').clangd.setup({
+    cmd = {
+        "clangd",
+        "--query-driver=/usr/bin/arm-*",
+        "--query-driver=/usr/bin/c++",
+    },
+    -- filetypes = { "c", "cpp" }, 
+})
 
 lsp.setup()
