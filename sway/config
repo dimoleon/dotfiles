@@ -177,6 +177,7 @@ for_window [app_id="com.github.johnfactotum.Foliate"] move container to workspac
 
 exec_always wlsunset -l 40.6 -L 22.9
 # exec /usr/libexec/polkit-kde-authentication-agent-1
+exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec nm-applet --indicator 
 exec mako
 
