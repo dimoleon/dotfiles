@@ -42,7 +42,7 @@ alias rm='rm -i'
 alias vim='nvim'
 alias viml='/usr/bin/vim'
 alias ranger='ranger --choosedir=$HOME/.cache/.rangerdir; LASTDIR=`cat $HOME/.cache/.rangerdir`; cd "$LASTDIR"'
-alias r='ranger'
+alias ra='ranger'
 alias emacs='emacsclient -c -a emacs'
 
 alias fzfo='xdg-open "$(rg --files | fzf)"'

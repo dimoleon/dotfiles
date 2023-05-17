@@ -14,13 +14,13 @@ local lsp = require('lsp-zero').preset({
 -- lsp.setup_servers({'tsserver', 'eslint'})
 
 -- (Optional) Configure lua language server for neovim
-lsp.nvim_workspace()
+-- lsp.nvim_workspace()
 
 require('lspconfig').clangd.setup({
     cmd = {
         "clangd",
-        "--query-driver=/usr/bin/arm-*",
         "--query-driver=/usr/bin/c++",
+        -- "--query-driver=/usr/bin/arm-*",
     },
     -- filetypes = { "c", "cpp" }, 
 })
