@@ -1,0 +1,9 @@
+[user]
+	email = giannis.dimoulios@gmail.com
+	name = Giannis
+[mergetool "fugitive"]
+	cmd = vim -f -c \"Gdiff\" \"$MERGED\"
+[merge]
+	tool = fugitive
+[alias]
+	log = log --all --graph --decoreate
