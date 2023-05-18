@@ -27,3 +27,6 @@ vim.opt.showmode = false
 vim.g.mapleader = ' '
 
 vim.keymap.set("n", "<F8>", "!cppcheck --enable=all --suppress=missingIncludeSystem . -itest/<CR>")
+
+vim.opt.wildmenu = true
+vim.opt.wildmode = 'list:longest,full'
