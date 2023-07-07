@@ -45,13 +45,38 @@ alias ranger='ranger --choosedir=$HOME/.cache/.rangerdir; LASTDIR=`cat $HOME/.ca
 alias ra='ranger'
 alias emacs='emacsclient -c -a emacs'
 
-alias fzfo='xdg-open "$(rg --files | fzf)"'
+alias o='xdg-open "$(rg --files | fzf --height 50%)"'
+alias d='cd "$(fd --type d --hidden . | fzf --height 50%)"'
+
+# check_directory() {
+#     if [[ $PWD == "$HOME/Documents/repos/comms_software" ]]; then
+#         # Define your aliases here
+#         alias build='cmake --build ./build --target STM32H7A3ZIQSetup.elf -- -j 6'
+#         alias flash='/usr/bin/openocd -s /usr/share/openocd/scripts -f /home/giannis/Documents/repos/comms_software/stm32h7x3i_eval.cfg -c "tcl_port disabled" -c "gdb_port disabled" -c "tcl_port disabled" -c "program \"/home/giannis/Documents/repos/comms_software/flash/STM32H7A3ZIQSetup.elf\"" -c reset -c shutdown
+# '
+#     else
+#         # Unset the aliases if you're not in the specific directory
+#         unalias build 2> /dev/null
+#         unalias flash 2> /dev/null
+#     fi
+# }
+#
+function check_zsh_file {
+    local zsh_file=".zsh"
+    if [[ -f $zsh_file ]]; then
+        source $zsh_file
+    fi
+}
+
+function chpwd_hook {
+    check_zsh_file
+}
 
 # Exports 
 export EDITOR='nvim'
 export VISUAL='nvim'
-# export TERM='xterm-kitty'
-export TERM='xterm-256color'
+export TERM='xterm-kitty'
+# export TERM='xterm-256color'
 # export TERMINAL='xterm-kitty'
 export PDFVIEWER='evince'
 export PATH=$HOME/.local/bin:$HOME/dotfiles/scripts:$HOME/.cargo/bin:$PATH
@@ -78,9 +103,11 @@ export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
 # Syntax highlighting & Autosuggestions 
 source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source ~/dotfiles/zsh/git.zsh
+#source ~/dotfiles/zsh/git.zsh
 # source ~/dotfiles/zsh/robbyrussell.zsh
 source ~/Documents/sources/powerlevel10k/powerlevel10k.zsh-theme
+
+add-zsh-hook chpwd chpwd_hook
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -89,7 +116,8 @@ source ~/Documents/sources/powerlevel10k/powerlevel10k.zsh-theme
 
 # !! Contents within this block are managed by juliaup !!
 
-path=('/home/giannis/Documents/sources/.juliaup/bin' $path)
+path=('/home/giannis/Documents/sources/juliaup/bin' $path)
 export PATH
 
 # <<< juliaup initialize <<<
+
