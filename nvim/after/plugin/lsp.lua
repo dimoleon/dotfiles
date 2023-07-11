@@ -108,14 +108,14 @@ require("clangd_extensions").setup({
         },
     },
 })
--- Make sure you setup `cmp` after lsp-zero
 
+-- Make sure you setup `cmp` after lsp-zero
 local cmp = require('cmp')
 local cmp_action = require('lsp-zero').cmp_action()
 
 cmp.setup({
-  mapping = {
-    ['<Tab>'] = cmp_action.luasnip_supertab(),
-    ['<S-Tab>'] = cmp_action.luasnip_shift_supertab(),
-  }
+    mapping = {
+        ['<Tab>'] = cmp_action.luasnip_supertab(),
+        ['<S-Tab>'] = cmp_action.luasnip_shift_supertab(),
+    }
 })

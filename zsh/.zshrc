@@ -47,6 +47,7 @@ alias emacs='emacsclient -c -a emacs'
 
 alias o='xdg-open "$(rg --files | fzf --height 50%)"'
 alias d='cd "$(fd --type d --hidden . | fzf --height 50%)"'
+alias remote='remmina $(locate ServerStudy.rdp) && exit'
 
 # check_directory() {
 #     if [[ $PWD == "$HOME/Documents/repos/comms_software" ]]; then
