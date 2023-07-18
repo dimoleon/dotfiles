@@ -89,7 +89,9 @@ bindsym {
     $super+8    workspace $ws8
     $super+9    workspace $ws9
     $super+0    workspace $ws10
-    $super+tab  workspace back_and_forth
+    $alt+tab    workspace back_and_forth
+    $super+tab  workspace next_on_output
+    $super+Shift+tab    workspace prev_on_output
 }
 
 bindsym {
