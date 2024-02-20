@@ -10,10 +10,9 @@ return require('packer').startup(function(use)
   use 'nvim-lualine/lualine.nvim'
   use 'kdheepak/tabline.nvim'
 
+  use 'nvim-lua/plenary.nvim'
   use {
-	  'nvim-telescope/telescope.nvim', tag = '0.1.1',
-	  -- or                            , branch = '0.1.x',
-	  requires = { {'nvim-lua/plenary.nvim'} }
+	  'nvim-telescope/telescope.nvim', { tag = '0.1.4' },
   }
 
   use 'EdenEast/nightfox.nvim'
@@ -50,11 +49,9 @@ return require('packer').startup(function(use)
 
 		  -- Snippets
 		  {'L3MON4D3/LuaSnip'},             -- Required
-		  {'rafamadriz/friendly-snippets'}, -- Optional
+		  -- {'rafamadriz/friendly-snippets'}, -- Optional
 	  }
   }
-
-  use 'p00f/clangd_extensions.nvim'
 
   use {
 	  "windwp/nvim-autopairs",
@@ -68,6 +65,15 @@ return require('packer').startup(function(use)
       end
   }
 
+  use({
+    "kylechui/nvim-surround",
+    tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+    config = function()
+        require("nvim-surround").setup({
+            -- Configuration here, or leave empty to use defaults
+        })
+    end
+  })
   -- use 'Exafunction/codeium.vim'
   use 'lervag/vimtex'
 end)

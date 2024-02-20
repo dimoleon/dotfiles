@@ -89,9 +89,9 @@ bindsym {
     $super+8    workspace $ws8
     $super+9    workspace $ws9
     $super+0    workspace $ws10
-    $alt+tab    workspace back_and_forth
-    $super+tab  workspace next_on_output
-    $super+Shift+tab    workspace prev_on_output
+    $super+tab  workspace back_and_forth
+    $alt+tab    workspace next_on_output
+    $alt+Shift+tab    workspace prev_on_output
 }
 
 bindsym {
@@ -143,8 +143,11 @@ bindsym --to-code {
     $super+comma    exec ~/dotfiles/scripts/wofi_window_switch.py
     $super+Return   exec kitty    
     $super+r        exec kitty -e ranger
-    Print exec grim $(xdg-user-dir PICTURES)/$(date +'%screenshot_%d-%m%y-%H:%M.png') 
-    $alt+Print exec grim -g "$(slurp)" $(xdg-user-dir PICTURES)/$(date +'screenshot_%d-%m%y-%H:%M.png')
+    # Print exec grim $(xdg-user-dir PICTURES)/$(date +'%screenshot_%d-%m-%y_%H:%M:%S.png') 
+    Print exec wl-copy < $(grimshot save output $(xdg-user-dir PICTURES)/$(date +'%screenshot_%d-%m-%y_%H:%M:%S.png'))
+    # $alt+Print exec grim -g "$(slurp)" $(xdg-user-dir PICTURES)/$(date +'screenshot_%d-%m-%y_%H:%M:%S.png')
+    $alt+Print exec wl-copy < $(grimshot save area $(xdg-user-dir PICTURES)/$(date +'%screenshot_%d-%m-%y_%H:%M:%S.png'))
+    $alt+b exec firefox
 }
 
 bindsym --to-code $super+s  mode $session_mode
@@ -179,19 +182,19 @@ for_window [app_id="com.github.johnfactotum.Foliate"] move container to workspac
 
 exec_always wlsunset -l 40.6 -L 22.9
 # exec /usr/libexec/polkit-kde-authentication-agent-1
-exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec /libexec/pam_kwallet_init
+# exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec nm-applet --indicator 
 exec mako
 
 # exec emacs --daemon
 # exec blueman-applet
-exec eval $(gnome-keyring-daemon --start)
 exec export SSH_AUTH_SOCK
 exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
 
 xwayland enable
 
-# include /etc/sway/config.d/*
+include /etc/sway/config.d/*
 include rules
 include visuals
 include colorschemes/solarized

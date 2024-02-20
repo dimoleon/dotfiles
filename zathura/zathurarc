@@ -1,0 +1,3 @@
+set dbus-service true
+set default-bg "#141517"
+set recolor true

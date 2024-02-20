@@ -25,7 +25,8 @@ bindkey -v
 # prompt redhat
 
 # Aliases 
-alias ls='exa -al --color=always --group-directories-first'
+alias code='code --ozone-platform-hint=auto --enable-features=WaylandWindowDecorations'
+alias ls='eza -al --color=always --group-directories-first'
 alias cat='bat'
 # alias cat='batcat'
 # alias fd='fdfind'
@@ -82,8 +83,8 @@ export TERM='xterm-kitty'
 export PDFVIEWER='evince'
 export PATH=$HOME/.local/bin:$HOME/dotfiles/scripts:$HOME/.cargo/bin:$PATH
 # export PATH=$PATH:$HOME/.local/bin:$HOME/.cargo/bin
-export PYTHONPATH=/usr/local/lib/python3/dist-packages:$PYTHONPATH
-export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
+# export PYTHONPATH=$HOME/.local/lib/python3.12/site-packages:/usr/local/lib64/python3.12/site-packages:/usr/lib/python3.12/site-packages:$PYTHONPATH
+# export LD_LIBRARY_PATH=/usr/local/lib64:$LD_LIBRARY_PATH
 # zplug - manage plugins
 # source /usr/share/zplug/init.zsh
 # zplug "plugins/git", from:oh-my-zsh
