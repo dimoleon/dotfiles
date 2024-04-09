@@ -169,6 +169,9 @@ exec swayidle -w \
      timeout 1020 'systemctl suspend' \
      # before-sleep 'swaylock'
 
+
+for_window [instance="__scratchpad"] move scratchpad 
+exec --no-startup-id $term -name __scratchpad
 for_window [app_id="gnome-calendar"] floating enable
 for_window [app_id="megasync"] floating enable
 for_window [app_id="gwenview"] move container to workspace number $ws8, workspace number $ws8
@@ -180,6 +183,8 @@ for_window [app_id="evince"] move container to workspace number $ws10, workspace
 for_window [app_id="foliate"] move container to workspace number $ws10, workspace number $ws10
 for_window [app_id="com.github.johnfactotum.Foliate"] move container to workspace number $ws10, workspace number $ws10
 
+exec_always ~/dotfiles/scripts/import_gsettings.sh
+# exec kitty --title Scratchpad
 exec_always wlsunset -l 40.6 -L 22.9
 # exec /usr/libexec/polkit-kde-authentication-agent-1
 exec /libexec/pam_kwallet_init
