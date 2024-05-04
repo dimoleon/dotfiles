@@ -80,11 +80,11 @@ export VISUAL='nvim'
 export TERM='xterm-kitty'
 # export TERM='xterm-256color'
 # export TERMINAL='xterm-kitty'
-export PDFVIEWER='evince'
+export PDFVIEWER='okular'
 export PATH=$HOME/.local/bin:$HOME/dotfiles/scripts:$HOME/.cargo/bin:$PATH
 # export PATH=$PATH:$HOME/.local/bin:$HOME/.cargo/bin
-# export PYTHONPATH=$HOME/.local/lib/python3.12/site-packages:/usr/local/lib64/python3.12/site-packages:/usr/lib/python3.12/site-packages:$PYTHONPATH
-# export LD_LIBRARY_PATH=/usr/local/lib64:$LD_LIBRARY_PATH
+export PYTHONPATH=$HOME/.local/lib/python3.12/site-packages:/usr/local/lib64/python3.12/site-packages:/usr/lib/python3.12/site-packages:$PYTHONPATH
+export LD_LIBRARY_PATH=/usr/local/lib64:$LD_LIBRARY_PATH
 # zplug - manage plugins
 # source /usr/share/zplug/init.zsh
 # zplug "plugins/git", from:oh-my-zsh
