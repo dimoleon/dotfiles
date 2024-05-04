@@ -12,11 +12,4 @@ font Roboto 8
 
 seat * hide_cursor 10000
 
-# Sway autoexec
-set $schema "org.gnome.desktop.interface"
-
-exec_always {
-    gsettings set $schema gtk-theme Adwaita
-    gsettings set $schema icon-theme Adwaita
-    gsettings set $schema gtk-application-prefer-dark-theme true
-}
+exec_always ~/dotfiles/scripts/import_gsettings.sh
