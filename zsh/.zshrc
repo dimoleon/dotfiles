@@ -44,9 +44,8 @@ alias vim='nvim'
 alias viml='/usr/bin/vim'
 alias ranger='ranger --choosedir=$HOME/.cache/.rangerdir; LASTDIR=`cat $HOME/.cache/.rangerdir`; cd "$LASTDIR"'
 alias ra='ranger'
-alias emacs='emacsclient -c -a emacs'
 
-alias o='xdg-open "$(rg --files | fzf --height 50%)"'
+# alias o='xdg-open "$(rg --files | fzf --height 50%)"'
 alias d='cd "$(fd --type d --hidden . | fzf --height 50%)"'
 alias remote='remmina $(locate ServerStudy.rdp) && exit'
 
