@@ -1,10 +1,10 @@
 
-output * bg ~/Pictures/Wallpapers/dark_jellyfish.jpg fill
+output * bg ~/Pictures/Wallpapers/exotic_flower.jpg fill
 
 
 default_border pixel 2
 
-smart_gaps on 
+# smart_gaps on 
 smart_borders no_gaps
 gaps inner 3
 
