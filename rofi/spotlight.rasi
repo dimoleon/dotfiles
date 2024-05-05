@@ -5,7 +5,6 @@
  *******************************************************************************/
 
 * {
-    font:   "Montserrat 12";
 
     bg0:    #2a2e32E6;
     bg1:    #fcfcfc80;
@@ -33,7 +32,6 @@ window {
 }
 
 inputbar {
-    font:       "Montserrat 20";
     padding:    12px;
     spacing:    12px;
     children:   [ icon-search, entry ];
@@ -50,7 +48,6 @@ icon-search, entry, element-icon, element-text {
 }
 
 entry {
-    font:   inherit;
 
     placeholder         : "Search";
     placeholder-color   : @fg2;
