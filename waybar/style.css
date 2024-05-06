@@ -15,16 +15,16 @@ window#waybar {
 }
 
 .modules-right {
-	background-color: rgba(0,43,51,0.85);
+	background-color: rgba(70,0,20,0.85);
     margin: 2px 10px 0 0;
 }
 .modules-center {
-	background-color: rgba(0,43,51,0.85);
+	background-color: rgba(70,0,20,0.85);
     margin: 2px 0 0 0;
 }
 .modules-left {
     margin: 2px 0 0 5px;
-	background-color: rgba(0,119,179,0.6);
+	background-color: rgba(150,0,30,0.6);
 }
 
 #workspaces button {
@@ -37,7 +37,7 @@ window#waybar {
 }
 
 #workspaces button.focused {
-	background-color: rgba(0,43,51,0.85);
+	background-color: rgba(70,0,20,0.85);
 }
 
 #clock,
