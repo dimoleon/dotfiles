@@ -1,11 +1,9 @@
 default-timeout=2000
-
 padding=10
 margin=10
 height=200
 max-visible=4
 border-size=1
-default-timeout=6000
 icon-location=right
 anchor=top-right
 font=Roboto 12
