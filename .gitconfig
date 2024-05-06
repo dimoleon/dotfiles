@@ -1,12 +1,15 @@
 [user]
 	email = giannis.dimoulios@gmail.com
-	name = Giannis
-[mergetool "fugitive"]
-	cmd = nvim -f -c \"Gdiff\" \"$MERGED\"
-[merge]
-	tool = fugitive
+	name = Giannis Dimoulios
 [alias]
-	log = log --all --graph --decoreate
+	log = log --all --graph --decorate
+[merge]
+  tool = diffview
+[mergetool]
+  prompt = false
+  keepBackup = false
+[mergetool "diffview"]
+  cmd = nvim -n -c "DiffviewOpen" "$MERGE"
 [filter "lfs"]
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
