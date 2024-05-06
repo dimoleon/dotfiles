@@ -75,6 +75,6 @@ return require('packer').startup(function(use)
         })
     end
   })
-  -- use 'Exafunction/codeium.vim'
+
   use 'lervag/vimtex'
 end)
