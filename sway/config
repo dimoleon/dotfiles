@@ -159,7 +159,7 @@ mode $session_mode bindsym --to-code {
     c       exec swaylock, mode "default"
     p       exec systemctl poweroff, mode "defualt"
     b       exec systemctl reboot, mode "default"
-    Caps_Lock  mode "default"
+    Escape  mode "default"
 }
 
 exec swayidle -w \
