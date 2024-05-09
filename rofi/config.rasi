@@ -2,6 +2,8 @@ configuration {
   modes: [window,drun,recursivebrowser];
   case-sensitive: false;
   show-icons: true;
+//  matching: "fuzzy";
+//  sorting-method: "fzf";
 }
 
 @theme "~/.config/rofi/spotlight.rasi"
