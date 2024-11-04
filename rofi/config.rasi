@@ -3,7 +3,7 @@ configuration {
   case-sensitive: false;
   show-icons: true;
 //  matching: "fuzzy";
-//  sorting-method: "fzf";
+  sorting-method: "fzf";
 }
 
 @theme "~/.config/rofi/spotlight.rasi"

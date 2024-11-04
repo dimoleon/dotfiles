@@ -16,6 +16,7 @@ return require('packer').startup(function(use)
   }
 
   use 'EdenEast/nightfox.nvim'
+  use 'ellisonleao/gruvbox.nvim'
 
   use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
 

@@ -173,7 +173,7 @@ exec swayidle -w \
 for_window [instance="__scratchpad"] move scratchpad 
 exec --no-startup-id $term -name __scratchpad
 for_window [app_id="gnome-calendar"] floating enable
-for_window [app_id="megasync"] floating enable
+# for_window [app_id="megasync"] floating enable
 for_window [app_id="gwenview"] move container to workspace number $ws8, workspace number $ws8
 for_window [app_id="eog"] move container to workspace number $ws8, workspace number $ws8
 for_window [app_id="mpv"] move container to workspace number $ws9, workspace number $ws9
