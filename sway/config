@@ -184,7 +184,8 @@ for_window [app_id="foliate"] move container to workspace number $ws10, workspac
 for_window [app_id="com.github.johnfactotum.Foliate"] move container to workspace number $ws10, workspace number $ws10
 
 # exec kitty --title Scratchpad
-exec_always wlsunset -l 40.6 -L 22.9
+exec_always wlsunset 
+#-l 40.6 -L 22.9
 # exec /usr/libexec/polkit-kde-authentication-agent-1
 exec /libexec/pam_kwallet_init
 # exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
