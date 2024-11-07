@@ -6,13 +6,13 @@
 
 * {
 
-    bg0:    #2a2e32E6;
-    bg1:    #fcfcfc80;
-    bg2:    #ab3347E6;
+    bg0:    #ebdbb2E6;
+    bg1:    #00000080;
+    bg2:    #00d3b8E6;
 
-    fg0:    #fcfcfc;
-    fg1:    #FFFFFF;
-    fg2:    #fcfcfc80;
+    fg0:    #000000;
+    fg1:    #0c0c0c;
+    fg2:    #00000080;
 
     background-color:   transparent;
     text-color:         @fg0;
