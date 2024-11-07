@@ -44,7 +44,14 @@ alias vim='nvim'
 alias viml='/usr/bin/vim'
 alias ranger='ranger --choosedir=$HOME/.cache/.rangerdir; LASTDIR=`cat $HOME/.cache/.rangerdir`; cd "$LASTDIR"'
 # alias ra='ranger'
-alias ra='~/Documents/sources/yazi/target/release/yazi'
+function ra() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		builtin cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
 
 # alias o='xdg-open "$(rg --files | fzf --height 50%)"'
 alias d='cd "$(fd --type d --hidden . | fzf --height 50%)"'
