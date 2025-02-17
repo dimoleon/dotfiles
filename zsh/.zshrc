@@ -91,6 +91,7 @@ export TERM='xterm-kitty'
 # export TERMINAL='xterm-kitty'
 export PDFVIEWER='okular'
 export PATH=$HOME/.local/bin:$HOME/dotfiles/scripts:$HOME/.cargo/bin:$PATH
+export PATH=$HOME/.config/emacs/bin:$PATH
 # export PATH=$PATH:$HOME/.local/bin:$HOME/.cargo/bin
 export PYTHONPATH=$HOME/.local/lib/python3.12/site-packages:/usr/local/lib64/python3.12/site-packages:/usr/lib/python3.12/site-packages:$PYTHONPATH
 export LD_LIBRARY_PATH=/usr/local/lib64:$LD_LIBRARY_PATH
@@ -133,3 +134,5 @@ export PATH
 
 # <<< juliaup initialize <<<
 
+# zoxide
+# eval "$(zoxide init zsh)"
