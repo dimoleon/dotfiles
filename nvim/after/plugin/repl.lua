@@ -17,6 +17,9 @@ iron.setup {
         command = { "ipython", "--no-autoindent" },  -- or { "python3" }
         format = common.bracketed_paste_python,
         block_dividers = { "# %%", "#%%" },
+      },
+      julia = {
+          command = { "julia" }
       }
     },
     -- set the file type of the newly created repl to ft
