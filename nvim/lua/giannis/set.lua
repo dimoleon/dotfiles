@@ -28,5 +28,5 @@ vim.opt.wrap = false
 
 vim.g.mapleader = ' '
 
-vim.keymap.set("n", "<F8>", "!cppcheck --enable=all --suppress=missingIncludeSystem . -itest/<CR>")
+-- vim.keymap.set("n", "<F8>", "!cppcheck --enable=all --suppress=missingIncludeSystem . -itest/<CR>")
 
