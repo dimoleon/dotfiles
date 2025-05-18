@@ -45,7 +45,9 @@ local lspconfig = require("lspconfig")
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 -- lua lsp 
-vim.lsp.enable('lua_ls')
+lspconfig.lua_ls.setup({
+    capabilities = capabilities,
+})
 -- no idea what the hell is going on, so just gonna wait to get a tad more stable api
 
 -- Python: Pyright
@@ -54,6 +56,9 @@ lspconfig.pyright.setup({
 })
 
 -- Julia: LanguageServer.jl
+lspconfig.julials.setup({
+    capabilities = capabilities,
+})
 -- lspconfig.julials.setup({
 --     capabilities = capabilities,
 --     on_new_config = function(new_config,new_root_dir)
