@@ -1,6 +1,6 @@
 require("mason").setup({})
 require("mason-lspconfig").setup({
-    -- automatic_enable = false,
+    ensure_installed = { 'lua_ls', 'pyright', 'julials', 'clangd' }
 })
 
 -- vim.lsp.enable('lua_ls')

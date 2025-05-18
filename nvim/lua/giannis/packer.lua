@@ -54,4 +54,6 @@ return require('packer').startup(function(use)
   }
 
   use 'lervag/vimtex'
+
+  use 'hkupty/iron.nvim'
 end)
